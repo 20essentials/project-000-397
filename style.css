@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue';
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: #0000ff; /* Azul */
+  text-decoration: none;
+}
+
+a:active {
+  color: #ff0000; /* Rojo */
+}
+
+a:visited {
+  color: mediumpurple; /* Verde */
+}
+
+a:focus {
+  color: #ffff00; /* Amarillo */
+}
+
+a:hover {
+  color: #ff00ff; /* Magenta */
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #0089d0 transparent;
+  background-image: url('assets/pattern.svg');
+  background-size: 200px;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  max-width: 800px;
+  margin-inline: auto;
+  background-color: black;
+  padding: 2rem;
+  padding-block: 0;
+  position: relative;
+  z-index: -1;
+  color: #0f0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: brown;
+    z-index: -1;
+    animation: indicator auto linear both;
+    animation-timeline: scroll();
+    background-color: #008;
+  }
+
+  img {
+    display: block;
+    margin-bottom: 0.5rem;
+    max-width: 300px;
+
+    @media (width <= 1111px) {
+      max-width: 200px;
+    }
+  }
+}
+
+@keyframes indicator {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
